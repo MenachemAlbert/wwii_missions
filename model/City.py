@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from config.base import Base
 
+
 class City(Base):
     __tablename__ = 'cities'
 
@@ -10,3 +11,5 @@ class City(Base):
     country_id = Column(Integer, ForeignKey('countries.country_id'), nullable=False)
 
     country = relationship('Country', back_populates='cities')
+    location = relationship('Location', back_populates='cities')
+

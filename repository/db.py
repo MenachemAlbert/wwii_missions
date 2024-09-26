@@ -6,3 +6,7 @@ def create_tables():
         Base.metadata.create_all(engine)
     except Exception as e:
         print(e)
+
+
+def drop_tables():
+    Base.metadata.drop_all(engine)
