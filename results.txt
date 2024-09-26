@@ -1,0 +1,29 @@
+
+Query 1:
+    - before the index:
+        Planning Time: 0.275 ms
+        Execution Time: 89.675 ms
+    - The indexes:
+        CREATE INDEX idx_mission_date_year ON mission (EXTRACT(YEAR FROM mission_date));
+    - after the index:
+        Planning Time: 1.960 ms
+        Execution Time: 7.952 ms
+    - Explanation:
+        The creation of the index idx_mission_date_year on the year extracted from mission_date
+        significantly improved query performance by enabling faster
+        filtering of missions for the specified year. The improved execution time indicates
+        that the index effectively reduced the amount of data processed, leading to quicker
+        access to relevant records.
+
+    Query 2:
+    - before the index:
+        Planning Time: 1.127 ms
+        Execution Time: 46.931 ms
+    - The indexes:
+        CREATE INDEX idx_mission_performance ON mission (airborne_aircraft, bomb_damage_assessment, target_country);
+    - after the index:
+        Planning Time: 1.662 ms
+        Execution Time: 3.844 ms
+    - Explanation:
+        The index on the number of planes accelerated the filtering,
+        and the index on the country improved the performance during the kibbutz.
