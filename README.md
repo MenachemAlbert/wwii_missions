@@ -14,6 +14,7 @@ pip install dictalchemy3 flask toolz returns psycopg2-binary sqlalchemy
 
 To run the application:
 
+
    1.Set up your database and configure the connection in config.py.
 
    2.Run the Flask application:
